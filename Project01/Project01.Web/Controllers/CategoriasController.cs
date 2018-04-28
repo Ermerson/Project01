@@ -68,5 +68,12 @@ namespace Project01.Web.Controllers
             return View(categorias.Where(
                 m => m.CategoriaId == id).First());
         }
+
+        public ActionResult Delete(long id)
+        {
+            categorias.Remove(categorias.Where(
+                m => m.CategoriaId == id).First());
+            return RedirectToAction("Index");
+        }
     }
 }
